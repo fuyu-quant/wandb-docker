@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  wandb:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    container_name: 'wandb'
+    restart: always
+    tty: true
+    #expose:
+     # - "8040"
+    ports:
+      - "9010:9010"
+    working_dir: '/root/'
+    volumes:
+      - /Users/tanakatouma/vscode/wandb-docker/src/:/root/src/
